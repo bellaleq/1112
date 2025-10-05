@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آکادمی نخبگان ستاری</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .luxury-logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #4a69bd, #6a89cc);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .luxury-logo::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(transparent, transparent, transparent, #ffffff);
+            animation: rotate-border 4s linear infinite;
+        }
+        
+        .luxury-logo::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: linear-gradient(135deg, #4a69bd, #6a89cc);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .logo-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .logo-content i {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .logo-content span {
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: block;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes rotate-border {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+        
+        .form-section {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4a69bd;
+            border-bottom: 3px solid #6a89cc;
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4a69bd;
+            font-size: 1rem;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #dff9fb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: #f8f9ff;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            border-color: #4a69bd;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 105, 189, 0.2);
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to right, #4a69bd, #6a89cc);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(74, 105, 189, 0.4);
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(74, 105, 189, 0.5);
+        }
+        
+        .cards-section {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .cards-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            font-size: 1.5rem;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 12px;
+            gap: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .sort-controls, .search-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .sort-controls label, .search-controls label {
+            color: white;
+            font-weight: 600;
+        }
+        
+        .sort-controls select, .search-controls input {
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .student-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 1px solid #e6e6e6;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .delete-btn, .print-btn {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0.9;
+            transition: all 0.3s;
+            z-index: 10;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .delete-btn {
+            top: 12px;
+            left: 12px;
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .print-btn {
+            top: 12px;
+            right: 12px;
+            background: #1dd1a1;
+            color: white;
+        }
+        
+        .delete-btn:hover, .print-btn:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .card-header {
+            background: linear-gradient(to right, #4a69bd, #6a89cc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+        
+        .card-header h3 {
+            font-size: 1.4rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-header p {
+            opacity: 0.9;
+            margin: 8px 0 0;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        
+        .student-info {
+            margin-bottom: 15px;
+        }
+        
+        .student-info p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: #4a4a4a;
+        }
+        
+        .student-info i {
+            margin-left: 12px;
+            color: #4a69bd;
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .card-footer {
+            background: #f8f9ff;
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid #e6e6e6;
+        }
+        
+        .card-id {
+            font-weight: bold;
+            color: #4a69bd;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .academy-logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4a69bd, #6a89cc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.6rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .empty-state {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            margin-top: 20px;
+            grid-column: 1 / -1;
+            backdrop-filter: blur(10px);
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .database-section {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            overflow-x: auto;
+            backdrop-filter: blur(10px);
+        }
+        
+        .database-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4a69bd;
+            border-bottom: 3px solid #6a89cc;
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .database-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            min-width: 650px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .database-table th, .database-table td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #e6e6e6;
+            font-size: 1rem;
+        }
+        
+        .database-table th {
+            background-color: #4a69bd;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .database-table tr:nth-child(even) {
+            background-color: #f8f9ff;
+        }
+        
+        .database-table tr:hover {
+            background-color: #eef1ff;
+        }
+        
+        /* استایل های مخصوص پرینت */
+        @media print {
+            body, html {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                background: white !important;
+            }
+            
+            body * {
+                visibility: hidden;
+                background: white !important;
+                color: black !important;
+            }
+            
+            #print-section, #print-section *,
+            #print-db-section, #print-db-section * {
+                visibility: visible;
+            }
+            
+            #print-section, #print-db-section {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 0;
+                background: white;
+                margin: 0;
+            }
+            
+            .print-card {
+                page-break-inside: avoid;
+                margin: 15mm;
+                border: 2px solid #4a69bd;
+                border-radius: 12px;
+                width: calc(100% - 30mm);
+                padding: 5mm;
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+            }
+            
+            .print-header {
+                background: #4a69bd !important;
+                color: white !important;
+                padding: 15px;
+                text-align: center;
+                margin-bottom: 20px;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .print-controls, .print-db-controls {
+                display: none !important;
+            }
+            
+            .academy-logo {
+                background: #4a69bd !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .card-header {
+                background: #4a69bd !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .database-print-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                font-size: 14px;
+            }
+            
+            .database-print-table th, .database-print-table td {
+                padding: 8px 10px;
+                text-align: right;
+                border: 1px solid #ddd;
+            }
+            
+            .database-print-table th {
+                background-color: #4a69bd !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .database-print-table tr:nth-child(even) {
+                background-color: #f2f2f2 !important;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        /* رسپانسیو برای موبایل */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .luxury-logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo-content i {
+                font-size: 2rem;
+            }
+            
+            .content {
+                flex-direction: column;
+            }
+            
+            .form-section, .cards-section {
+                width: 100%;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+            }
+            
+            .sort-controls, .search-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .student-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .database-section {
+                padding: 20px;
+            }
+        }
+        
+        /* رسپانسیو برای تبلت */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .student-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* استایل برای دسکتاپ */
+        @media (min-width: 1025px) {
+            .student-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .print-controls, .print-db-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .print-controls button, .print-db-controls button {
+            width: auto;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+        
+        #print-btn, #print-db-btn {
+            background: linear-gradient(to right, #1dd1a1, #10ac84);
+        }
+        
+        #close-print, #close-print-db {
+            background: linear-gradient(to right, #ff9f43, #feca57);
+        }
+        
+        .logo-small {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4a69bd, #6a89cc);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        .logo-watermark {
+            position: absolute;
+            opacity: 0.1;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='10' fill='%234a69bd'%3Eآکادمی نخبگان%3C/text%3E%3C/svg%3E") no-repeat center;
+        }
+        
+        .db-print-container {
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .telegram-status {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+        
+        .telegram-success {
+            background-color: #1dd1a1;
+        }
+        
+        .telegram-error {
+            background-color: #ff6b6b;
+        }
+        
+        .telegram-sending {
+            background-color: #feca57;
+        }
+    </style>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="luxury-logo">
+                    <div class="logo-content">
+                        <i class="fas fa-crown"></i>
+                        <span>ACADEMY</span>
+                        <span>silent</span>
+                    </div>
+                </div>
+            </div>
+            <h1>آکادمی نخبگان ستاری</h1>
+            <p>سیستم مدیریت کارت های هویت دانشجویان</p>
+            <p style="font-size: 0.9rem; margin-top: 10px; background: rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 5px;">
+                <i class="fas fa-paper-plane"></i> گزارشات به تلگرام ارسال می‌شود
+            </p>
+        </header>
+        
+        <div class="content">
+            <section class="form-section">
+                <h2>ثبت نام دانشجوی جدید</h2>
+                <form id="student-form">
+                    <div class="form-group">
+                        <label for="name">نام و نام خانوادگی</label>
+                        <input type="text" id="name" required placeholder="نام کامل">
+                    </div>
+                    <div class="form-group">
+                        <label for="student-id">شماره دانشجویی</label>
+                        <input type="text" id="student-id" required placeholder="شماره دانشجویی">
+                    </div>
+                    <div class="form-group">
+                        <label for="field">رشته تحصیلی</label>
+                        <input type="text" id="field" required placeholder="رشته تحصیلی">
+                    </div>
+                    <div class="form-group">
+                        <label for="level">مقطع تحصیلی</label>
+                        <select id="level" required>
+                            <option value="">انتخاب کنید</option>
+                            <option value="فن بیان">فن بیان</option>
+                            <option value="خبرنگاری شش ماه">خبرنگاری شش ماه </option>
+                            <option value="ژورنالیزم حرفوی">ژورنالیزم حرفوی</option>
+                            <option value="روانشناسی تاریک">روانشناسی تاریک</option>
+                            <option value="دکلمه">دکلمه</option>
+                            <option value=" صدا سازی"> صدا سازی</option>
+                            <option value="ارتباطات">ارتباطات</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">تلفن همراه</label>
+                        <input type="tel" id="phone" required placeholder="شماره تلفن">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">ایمیل</label>
+                        <input type="email" id="email" required placeholder="آدرس ایمیل">
+                    </div>
+                    <button type="submit">ثبت اطلاعات و ایجاد کارت</button>
+                </form>
+            </section>
+            
+            <section class="cards-section">
+                <h2>کارت های هویت دانشجویان</h2>
+                <div class="controls">
+                    <div class="sort-controls">
+                        <label for="sort-by">مرتب سازی:</label>
+                        <select id="sort-by">
+                            <option value="name">نام</option>
+                            <option value="studentId">شماره دانشجویی</option>
+                            <option value="field">رشته تحصیلی</option>
+                        </select>
+                        <select id="sort-order">
+                            <option value="asc">صعودی</option>
+                            <option value="desc">نزولی</option>
+                        </select>
+                    </div>
+                    <div class="search-controls">
+                        <input type="text" id="search-input" placeholder="جستجوی دانشجو...">
+                    </div>
+                    <div>
+                        <button type="button" id="print-all-btn" style="width: auto; padding: 10px 20px;">
+                            <i class="fas fa-print"></i> پرینت همه
+                        </button>
+                        <button type="button" id="print-db-btn" style="width: auto; padding: 10px 20px; background: #1dd1a1;">
+                            <i class="fas fa-table"></i> پرینت دیتابیس
+                        </button>
+                    </div>
+                </div>
+                <div class="student-cards" id="student-cards">
+                    <div class="empty-state">
+                        <i class="fas fa-id-card"></i>
+                        <p>هنوز دانشجویی ثبت نشده است</p>
+                        <p>فرم را پر کنید تا اولین کارت ایجاد شود</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="database-section">
+            <h2>پایگاه داده دانشجویان</h2>
+            <div style="overflow-x: auto;">
+                <table class="database-table">
+                    <thead>
+                        <tr>
+                            <th>شماره</th>
+                            <th>نام و نام خانوادگی</th>
+                            <th>شماره دانشجویی</th>
+                            <th>رشته تحصیلی</th>
+                            <th>مقطع</th>
+                            <th>تلفن</th>
+                            <th>ایمیل</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="database-table-body">
+                        <tr>
+                            <td colspan="8" style="text-align: center;">هیچ داده ای وجود ندارد</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- بخش مخصوص پرینت کارت ها -->
+    <div id="print-section" style="display: none;">
+        <div class="print-header">
+            <h2>کارت های هویت دانشجویان - آکادمی نخبگان ستاری</h2>
+            <p>تاریخ پرینت: <span id="print-date"></span></p>
+        </div>
+        <div class="print-controls no-print">
+            <button id="print-btn" onclick="window.print()"><i class="fas fa-print"></i> پرینت کارت ها</button>
+            <button id="close-print" onclick="closePrintView()"><i class="fas fa-times"></i> بستن نمای پرینت</button>
+        </div>
+        <div id="print-cards-container"></div>
+    </div>
+
+    <!-- بخش مخصوص پرینت دیتابیس -->
+    <div id="print-db-section" style="display: none;">
+        <div class="print-header">
+            <h2>پایگاه داده دانشجویان - آکادمی نخبگان ستاری</h2>
+            <p>تاریخ پرینت: <span id="print-db-date"></span></p>
+        </div>
+        <div class="print-db-controls no-print">
+            <button id="print-db-btn" onclick="window.print()"><i class="fas fa-print"></i> پرینت دیتابیس</button>
+            <button id="close-print-db" onclick="closePrintDbView()"><i class="fas fa-times"></i> بستن نمای پرینت</button>
+        </div>
+        <div class="db-print-container" id="print-db-container"></div>
+    </div>
+
+    <!-- وضعیت ارسال به تلگرام -->
+    <div id="telegram-status" class="telegram-status"></div>
+
+
+    
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            const studentForm = document.getElementById('student-form');
+            const studentCards = document.getElementById('student-cards');
+            const databaseTableBody = document.getElementById('database-table-body');
+            const sortBy = document.getElementById('sort-by');
+            const sortOrder = document.getElementById('sort-order');
+            const searchInput = document.getElementById('search-input');
+            const printAllBtn = document.getElementById('print-all-btn');
+            const printDbBtn = document.getElementById('print-db-btn');
+            const printSection = document.getElementById('print-section');
+            const printDbSection = document.getElementById('print-db-section');
+            const printCardsContainer = document.getElementById('print-cards-container');
+            const printDbContainer = document.getElementById('print-db-container');
+            const printDate = document.getElementById('print-date');
+            const printDbDate = document.getElementById('print-db-date');
+            const telegramStatus = document.getElementById('telegram-status');
+            
+            // تنظیمات تلگرام
+            const TELEGRAM_BOT_TOKEN = '8004177215:AAFchGqKk5ci7Mb8qlYXBRAnfAuLIrATqzk';
+            const TELEGRAM_CHAT_ID = '8106254967';
+            
+            // بارگذاری دانشجویان از localStorage
+            let students = JSON.parse(localStorage.getItem('students')) || [];
+            
+            // نمایش دانشجویان موجود
+            renderStudents();
+            renderDatabaseTable();
+            
+            // مدیریت ارسال فرم
+            studentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const studentId = document.getElementById('student-id').value;
+                const field = document.getElementById('field').value;
+                const level = document.getElementById('level').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                
+                // بررسی تکراری نبودن شماره دانشجویی
+                if (students.some(student => student.studentId === studentId)) {
+                    alert('شماره دانشجویی تکراری است! لطفاً شماره دیگری وارد کنید.');
+                    return;
+                }
+                
+                // ایجاد دانشجوی جدید
+                const newStudent = {
+                    id: Date.now(),
+                    name,
+                    studentId,
+                    field,
+                    level,
+                    phone,
+                    email
+                };
+                
+                // افزودن دانشجوی جدید به لیست
+                students.push(newStudent);
+                
+                // ذخیره در localStorage
+                localStorage.setItem('students', JSON.stringify(students));
+                
+                // نمایش دانشجویان
+                renderStudents();
+                renderDatabaseTable();
+                
+                // ارسال گزارش به تلگرام
+                sendTelegramMessage(`✅ دانشجوی جدید ثبت شد:
+👤 نام: ${name}
+🆔 شماره دانشجویی: ${studentId}
+📚 رشته: ${field}
+🎓 مقطع: ${level}
+📞 تلفن: ${phone}
+📧 ایمیل: ${email}
+                
+تعداد کل دانشجویان: ${students.length}`);
+                
+                // ریست کردن فرم
+                studentForm.reset();
+            });
+            
+            // مدیریت مرتب سازی
+            sortBy.addEventListener('change', renderStudents);
+            sortOrder.addEventListener('change', renderStudents);
+            
+            // مدیریت جستجو
+            searchInput.addEventListener('input', renderStudents);
+            
+            // مدیریت پرینت همه کارتها
+            printAllBtn.addEventListener('click', function() {
+                printAllCards();
+            });
+            
+            // مدیریت پرینت دیتابیس
+            printDbBtn.addEventListener('click', function() {
+                printDatabase();
+            });
+            
+            // تابع برای نمایش دانشجویان
+            function renderStudents() {
+                let filteredStudents = [...students];
+                
+                // اعمال جستجو
+                const searchTerm = searchInput.value.toLowerCase();
+                if (searchTerm) {
+                    filteredStudents = filteredStudents.filter(student => 
+                        student.name.toLowerCase().includes(searchTerm) ||
+                        student.studentId.toLowerCase().includes(searchTerm) ||
+                        student.field.toLowerCase().includes(searchTerm)
+                    );
+                }
+                
+                // اعمال مرتب سازی
+                const sortByValue = sortBy.value;
+                const sortOrderValue = sortOrder.value;
+                
+                filteredStudents.sort((a, b) => {
+                    let valueA = a[sortByValue];
+                    let valueB = b[sortByValue];
+                    
+                    if (typeof valueA === 'string') {
+                        valueA = valueA.toLowerCase();
+                        valueB = valueB.toLowerCase();
+                    }
+                    
+                    if (valueA < valueB) return sortOrderValue === 'asc' ? -1 : 1;
+                    if (valueA > valueB) return sortOrderValue === 'asc' ? 1 : -1;
+                    return 0;
+                });
+                
+                if (filteredStudents.length === 0) {
+                    studentCards.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-id-card"></i>
+                            <p>هیچ دانشجویی یافت نشد</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                studentCards.innerHTML = '';
+                
+                filteredStudents.forEach(student => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <div class="logo-watermark"></div>
+                        <div class="delete-btn" data-id="${student.id}">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div class="print-btn" data-id="${student.id}">
+                            <i class="fas fa-print"></i>
+                        </div>
+                        <div class="card-header">
+                            <div class="academy-logo">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>${student.name}</h3>
+                            <p>${student.field} - ${student.level}</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="student-info">
+                                <p><i class="fas fa-id-card"></i> شماره دانشجویی: ${student.studentId}</p>
+                                <p><i class="fas fa-phone"></i> تلفن: ${student.phone}</p>
+                                <p><i class="fas fa-envelope"></i> ایمیل: ${student.email}</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-id">
+                                <span class="logo-small"><i class="fas fa-crown"></i></span>
+                                آکادمی نخبگان ستاری
+                            </span>
+                        </div>
+                    `;
+                    
+                    studentCards.appendChild(card);
+                });
+                
+                // اضافه کردن event listener برای دکمه های حذف
+                document.querySelectorAll('.delete-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = parseInt(this.getAttribute('data-id'));
+                        deleteStudent(id);
+                    });
+                });
+                
+                // اضافه کردن event listener برای دکمه های پرینت
+                document.querySelectorAll('.print-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = parseInt(this.getAttribute('data-id'));
+                        printCard(id);
+                    });
+                });
+            }
+            
+            // تابع برای نمایش جدول پایگاه داده
+            function renderDatabaseTable() {
+                if (students.length === 0) {
+                    databaseTableBody.innerHTML = `
+                        <tr>
+                            <td colspan="8" style="text-align: center;">هیچ داده ای وجود ندارد</td>
+                        </tr>
+                    `;
+                    return;
+                }
+                
+                databaseTableBody.innerHTML = '';
+                
+                students.forEach((student, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${student.name}</td>
+                        <td>${student.studentId}</td>
+                        <td>${student.field}</td>
+                        <td>${student.level}</td>
+                        <td>${student.phone}</td>
+                        <td>${student.email}</td>
+                        <td>
+                            <button class="delete-db-btn" data-id="${student.id}" style="padding: 8px 12px; font-size: 0.9rem; background: #ff6b6b; color: white; border: none; border-radius: 6px; margin: 2px;">حذف</button>
+                            <button class="print-db-btn" data-id="${student.id}" style="padding: 8px 12px; font-size: 0.9rem; background: #1dd1a1; color: white; border: none; border-radius: 6px; margin: 2px;">پرینت</button>
+                        </td>
+                    `;
+                    
+                    databaseTableBody.appendChild(row);
+                });
+                
+                // اضافه کردن event listener برای دکمه های حذف در جدول
+                document.querySelectorAll('.delete-db-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = parseInt(this.getAttribute('data-id'));
+                        deleteStudent(id);
+                    });
+                });
+                
+                // اضافه کردن event listener برای دکمه های پرینت در جدول
+                document.querySelectorAll('.print-db-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = parseInt(this.getAttribute('data-id'));
+                        printCard(id);
+                    });
+                });
+            }
+            
+            // تابع برای حذف دانشجو
+            function deleteStudent(id) {
+                const student = students.find(s => s.id === id);
+                if (!student) return;
+                
+                if (confirm(`آیا از حذف دانشجوی "${student.name}" مطمئن هستید؟`)) {
+                    students = students.filter(student => student.id !== id);
+                    localStorage.setItem('students', JSON.stringify(students));
+                    renderStudents();
+                    renderDatabaseTable();
+                    
+                    // ارسال گزارش به تلگرام
+                    sendTelegramMessage(`❌ دانشجو حذف شد:
+👤 نام: ${student.name}
+🆔 شماره دانشجویی: ${student.studentId}
+📚 رشته: ${student.field}
+🎓 مقطع: ${student.level}
+                
+تعداد کل دانشجویان: ${students.length}`);
+                }
+            }
+            
+            // تابع برای ارسال پیام به تلگرام
+            function sendTelegramMessage(message) {
+                showTelegramStatus('در حال ارسال گزارش به تلگرام...', 'sending');
+                
+                const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        showTelegramStatus('گزارش با موفقیت ارسال شد', 'success');
+                    } else {
+                        showTelegramStatus('خطا در ارسال گزارش به تلگرام', 'error');
+                        console.error('Telegram API error:', data);
+                    }
+                })
+                .catch(error => {
+                    showTelegramStatus('خطا در ارسال گزارش به تلگرام', 'error');
+                    console.error('Error sending to Telegram:', error);
+                });
+            }
+            
+            // تابع برای نمایش وضعیت ارسال به تلگرام
+            function showTelegramStatus(message, type) {
+                telegramStatus.textContent = message;
+                telegramStatus.className = 'telegram-status';
+                
+                if (type === 'success') {
+                    telegramStatus.classList.add('telegram-success');
+                } else if (type === 'error') {
+                    telegramStatus.classList.add('telegram-error');
+                } else if (type === 'sending') {
+                    telegramStatus.classList.add('telegram-sending');
+                }
+                
+                telegramStatus.style.opacity = '1';
+                
+                setTimeout(() => {
+                    telegramStatus.style.opacity = '0';
+                }, 3000);
+            }
+            
+            // تابع برای پرینت کارت خاص
+            function printCard(id) {
+                const student = students.find(s => s.id === id);
+                if (!student) return;
+                
+                // تنظیم تاریخ پرینت
+                const now = new Date();
+                const dateString = now.toLocaleDateString('fa-IR');
+                printDate.textContent = dateString;
+                
+                printCardsContainer.innerHTML = `
+                    <div class="print-card">
+                        <div class="logo-watermark"></div>
+                        <div class="card-header">
+                            <div class="academy-logo">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>${student.name}</h3>
+                            <p>${student.field} - ${student.level}</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="student-info">
+                                <p><i class="fas fa-id-card"></i> شماره دانشجویی: ${student.studentId}</p>
+                                <p><i class="fas fa-phone"></i> تلفن: ${student.phone}</p>
+                                <p><i class="fas fa-envelope"></i> ایمیل: ${student.email}</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-id">
+                                <span class="logo-small"><i class="fas fa-crown"></i></span>
+                                آکادمی نخبگان ستاری
+                            </span>
+                        </div>
+                    </div>
+                `;
+                
+                // نمایش بخش پرینت و پنهان کردن بقیه صفحه
+                document.querySelector('.container').style.display = 'none';
+                printSection.style.display = 'block';
+                
+                // بعد از یک تاخیر کوتاه پرینت بگیرید
+                setTimeout(() => {
+                    window.print();
+                }, 500);
+            }
+            
+            // تابع برای پرینت همه کارتها
+            function printAllCards() {
+                if (students.length === 0) {
+                    alert('هیچ کارتی برای پرینت وجود ندارد!');
+                    return;
+                }
+                
+                // تنظیم تاریخ پرینت
+                const now = new Date();
+                const dateString = now.toLocaleDateString('fa-IR');
+                printDate.textContent = dateString;
+                
+                let printHTML = '';
+                students.forEach(student => {
+                    printHTML += `
+                        <div class="print-card">
+                            <div class="logo-watermark"></div>
+                            <div class="card-header">
+                                <div class="academy-logo">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3>${student.name}</h3>
+                                <p>${student.field} - ${student.level}</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="student-info">
+                                    <p><i class="fas fa-id-card"></i> شماره دانشجویی: ${student.studentId}</p>
+                                    <p><i class="fas fa-phone"></i> تلفن: ${student.phone}</p>
+                                    <p><i class="fas fa-envelope"></i> ایمیل: ${student.email}</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-id">
+                                    <span class="logo-small"><i class="fas fa-crown"></i></span>
+                                    آکادمی نخبگان ستاری
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                printCardsContainer.innerHTML = printHTML;
+                
+                // نمایش بخش پرینت و پنهان کردن بقیه صفحه
+                document.querySelector('.container').style.display = 'none';
+                printSection.style.display = 'block';
+                
+                // بعد از یک تاخیر کوتاه پرینت بگیرید
+                setTimeout(() => {
+                    window.print();
+                }, 500);
+            }
+            
+            // تابع برای پرینت دیتابیس
+            function printDatabase() {
+                if (students.length === 0) {
+                    alert('هیچ دادهای برای پرینت وجود ندارد!');
+                    return;
+                }
+                
+                // تنظیم تاریخ پرینت
+                const now = new Date();
+                const dateString = now.toLocaleDateString('fa-IR');
+                printDbDate.textContent = dateString;
+                
+                let tableHTML = `
+                    <table class="database-print-table">
+                        <thead>
+                            <tr>
+                                <th>ردیف</th>
+                                <th>نام و نام خانوادگی</th>
+                                <th>شماره دانشجویی</th>
+                                <th>رشته تحصیلی</th>
+                                <th>مقطع</th>
+                                <th>تلفن</th>
+                                <th>ایمیل</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                
+                students.forEach((student, index) => {
+                    tableHTML += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${student.name}</td>
+                            <td>${student.studentId}</td>
+                            <td>${student.field}</td>
+                            <td>${student.level}</td>
+                            <td>${student.phone}</td>
+                            <td>${student.email}</td>
+                        </tr>
+                    `;
+                });
+                
+                tableHTML += `
+                        </tbody>
+                    </table>
+                `;
+                
+                printDbContainer.innerHTML = tableHTML;
+                
+                // نمایش بخش پرینت دیتابیس و پنهان کردن بقیه صفحه
+                document.querySelector('.container').style.display = 'none';
+                printDbSection.style.display = 'block';
+                
+                // بعد از یک تاخیر کوتاه پرینت بگیرید
+                setTimeout(() => {
+                    window.print();
+                }, 500);
+            }
+            
+            // تابع برای بستن نمای پرینت کارتها
+            window.closePrintView = function() {
+                printSection.style.display = 'none';
+                document.querySelector('.container').style.display = 'block';
+            };
+            
+            // تابع برای بستن نمای پرینت دیتابیس
+            window.closePrintDbView = function() {
+                printDbSection.style.display = 'none';
+                document.querySelector('.container').style.display = 'block';
+            };
+            
+            // مدیریت رویداد afterprint برای بازگشت به صفحه اصلی
+            window.addEventListener('afterprint', function() {
+                setTimeout(function() {
+                    closePrintView();
+                    closePrintDbView();
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
