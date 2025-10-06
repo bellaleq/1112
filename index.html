@@ -4075,7 +4075,7 @@ class ArtSpaceDatabase {
         const settings = {
             site_name: 'ArtSpace',
             site_description: 'بزرگترین مارکت اپلیکیشن‌های هنری',
-            currency: 'تومان',
+            currency: 'افغانی',
             language: 'fa',
             theme: 'light',
             maintenance: false,
@@ -4697,7 +4697,7 @@ function showUploadModal() {
                         </div>
                         
                         <div class="form-group">
-                            <label class="form-label">قیمت (تومان)</label>
+                            <label class="form-label">قیمت (افغانی)</label>
                             <input type="number" class="form-input" id="uploadAppPrice" 
                                    value="0" min="0" placeholder="0 برای اپ رایگان">
                         </div>
@@ -4912,7 +4912,7 @@ function loadFeaturedApps() {
             <p class="app-description">${app.description}</p>
             <div class="app-meta">
                 <div class="app-price ${app.price === 0 ? 'free' : ''}">
-                    ${app.price === 0 ? 'رایگان' : app.price.toLocaleString() + ' تومان'}
+                    ${app.price === 0 ? 'رایگان' : app.price.toLocaleString() + ' افغانی'}
                 </div>
                 <div class="app-stats">
                     <span>${app.size}</span>
@@ -5441,7 +5441,7 @@ function renderDeveloperApps(apps) {
                             </span>
                         </td>
                         <td>${app.downloads.toLocaleString()}</td>
-                        <td>${app.price === 0 ? 'رایگان' : app.price.toLocaleString() + ' تومان'}</td>
+                        <td>${app.price === 0 ? 'رایگان' : app.price.toLocaleString() + ' افغانی'}</td>
                         <td>${new Date(app.created_at).toLocaleDateString('fa-IR')}</td>
                     </tr>
                 `).join('')}
